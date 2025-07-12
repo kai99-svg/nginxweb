@@ -1,8 +1,11 @@
-FROM nginx:alpine ##apply the nginx version
+#apply the nginx version
+FROM nginx:alpine 
 
-COPY nginx.conf /etc/nginx/nginx.conf ##Copy from source to destination
+##Copy from source to destination
+COPY nginx.conf /etc/nginx/nginx.conf 
 
-COPY touch/ /usr/share/nginx/html/touch/ ## Copy from s to d
+## Copy from s to d
+COPY touch/ /usr/share/nginx/html/touch/ 
 
 COPY ssl/ /etc/nginx/ssl/
 
