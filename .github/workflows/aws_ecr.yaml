@@ -37,7 +37,7 @@ jobs:
           severity: HIGH,CRITICAL
           format: table
           ignore-unfixed: true
-          trivyignores: .trivyignore
+          scanners: vuln
           exit-code: 1
 
       - name: Push image to ECR
