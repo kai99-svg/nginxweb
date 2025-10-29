@@ -37,7 +37,7 @@ jobs:
           severity: HIGH,CRITICAL
           format: table
           ignore-unfixed: true
-          ignore-secret-files: /etc/nginx/ssl/private.key
+          trivyignores: .trivyignore
           exit-code: 1
 
       - name: Push image to ECR
