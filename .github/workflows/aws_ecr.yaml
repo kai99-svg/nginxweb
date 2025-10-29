@@ -37,7 +37,7 @@ jobs:
           severity: HIGH,CRITICAL
           format: table
           ignore-unfixed: true
-          ignore-files: /etc/nginx/ssl/private.key
+          ignore-secret-files: /etc/nginx/ssl/private.key
           exit-code: 1
 
       - name: Push image to ECR
