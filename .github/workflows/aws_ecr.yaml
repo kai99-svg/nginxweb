@@ -43,4 +43,9 @@ jobs:
         run: docker push ${{ env.ECR_REPO }}:$IMAGE_TAG
 
       - name: Update manifest file
-        run: sed -i "s|image: ${{ env.ECR_REPO }}:.*|image: ${{ env.ECR_REPO }}:$IMAGE_TAG|g" manifest.yaml
+        run: |
+          sed -Ei "s|(image: ?).*|\1${ECR_REPO}:${IMAGE_TAG}|g" manifest.yaml
+
+
+
+
