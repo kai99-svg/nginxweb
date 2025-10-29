@@ -1,9 +1,10 @@
 name: Build and Push NGINX Docker Image  # Name of the GitHub Actions workflow
 
 on:  # Define the trigger for the workflow
-  push:  # Trigger the workflow on a git push
-    branches:
-      - main  # Only run this workflow when code is pushed to the 'main' branch
+  workflow_dispatch:
+  #push:  # Trigger the workflow on a git push
+   # branches:
+    #  - main  # Only run this workflow when code is pushed to the 'main' branch
 
 jobs:  # Define the jobs to run
   docker:  # Name of the job
