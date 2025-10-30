@@ -50,6 +50,7 @@ jobs:
           sed -Ei "s|(image: ?).*|\1${ECR_REPO}:${IMAGE_TAG}|g" manifest.yaml
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update image tag to ${{ env.IMAGE_TAG"}} || echo "No changes to commit"
 
       - name: Create PR to main (for ArgoCD)
         uses: peter-evans/create-pull-request@v6
