@@ -57,7 +57,7 @@ jobs:
       - name: Create PR to main (for ArgoCD)
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           branch: release-${{ env.IMAGE_TAG }}
           title: "Promote image to production (${{ env.IMAGE_TAG }})"
           body: "Promoting release ${{ env.IMAGE_TAG }} to production"
