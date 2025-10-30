@@ -48,6 +48,8 @@ jobs:
       - name: Update manifest file
         run: |
           sed -Ei "s|(image: ?).*|\1${ECR_REPO}:${IMAGE_TAG}|g" manifest.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Create PR to main (for ArgoCD)
         uses: peter-evans/create-pull-request@v6
