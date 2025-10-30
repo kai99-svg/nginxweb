@@ -2,6 +2,8 @@ name: build docker and update k8s manifest
   
 on:
   workflow_dispatch:
+permissions:
+  contents: write  # ✅ allow push to the repo
 
 jobs:
   build_docker:
