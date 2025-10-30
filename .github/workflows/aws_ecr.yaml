@@ -48,7 +48,7 @@ jobs:
           sed -Ei "s|(image: ?).*|\1${ECR_REPO}:${IMAGE_TAG}|g" manifest.yaml
           git config user.name "github-actions" # to store who action the workflow
           git config user.email "actions@github.com" # to store who action the workflow
-          git add k8s/deployment.yaml
+          git add manifest.yaml
           git commit -m "Update image tag to ${IMAGE_TAG}"
           git push
 
