@@ -48,11 +48,15 @@ jobs:
       - name: Update manifest file
         run: |
           sed -Ei "s|(image: ?).*|\1${ECR_REPO}:${IMAGE_TAG}|g" manifest.yaml
-          git config user.name "github-actions" # to store who action the workflow
-          git config user.email "actions@github.com" # to store who action the workflow
-          git add manifest.yaml
-          git commit -m "Update image tag to ${IMAGE_TAG}"
-          git push
+
+      - name: Create PR to main (for ArgoCD)
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release-${{ env.IMAGE_TAG }}
+          title: "Promote image to production (${{ env.IMAGE_TAG }})"
+          body: "Promoting release ${{ env.IMAGE_TAG }} to production"
+
 
 
 
