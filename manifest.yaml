@@ -1,3 +1,3 @@
 containers:
   - name: myapp
-    image: 279205476473.dkr.ecr.us-east-1.amazonaws.com/myapp:oldtag
+    image: 279205476473.dkr.ecr.us-east-1.amazonaws.com/myapp:c4c1e6fd89213c5b5ab4f49a2c5c45f27c24e316
